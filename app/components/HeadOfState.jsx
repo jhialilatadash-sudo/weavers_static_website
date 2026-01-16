@@ -92,24 +92,40 @@ export default function HeadOfState() {
             <h4 className="bg-orange-500 text-white px-4 py-3 font-semibold">
               Who
             </h4>
+
             <ul className="p-4 space-y-3 text-gray-700">
-              <li>Mission & Vision</li>
-              <li>Who is Who</li>
-              <li>Organisational Chart</li>
+              <li className="cursor-pointer transition-all duration-300 hover:text-orange-500 hover:animate-[pulse_1.2s_ease-in-out_infinite]">
+                Mission & Vision
+              </li>
+              <li className="cursor-pointer transition-all duration-300 hover:text-orange-500 hover:animate-[pulse_1.2s_ease-in-out_infinite]">
+                Who is Who
+              </li>
+              <li className="cursor-pointer transition-all duration-300 hover:text-orange-500 hover:animate-[pulse_1.2s_ease-in-out_infinite]">
+                Organisational Chart
+              </li>
             </ul>
           </div>
+
 
           {/* ANYTHING ELSE */}
           <div className="bg-white rounded shadow overflow-hidden">
             <h4 className="bg-blue-500 text-white px-4 py-3 font-semibold">
               Anything Else
             </h4>
+
             <ul className="p-4 space-y-3 text-gray-700">
-              <li>Any Person</li>
-              <li>Any Person</li>
-              <li>Any Person</li>
+              <li className="cursor-pointer transition-all duration-300 hover:text-orange-500 hover:animate-[pulse_0.8s_ease-in-out_infinite]">
+                Any Person
+              </li>
+              <li className="cursor-pointer transition-all duration-300 hover:text-orange-500 hover:animate-[pulse_1.2s_ease-in-out_infinite]">
+                Any Person
+              </li>
+              <li className="cursor-pointer transition-all duration-300 hover:text-orange-500 hover:animate-[pulse_1.2s_ease-in-out_infinite]">
+                Any Person
+              </li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
