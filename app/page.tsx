@@ -3,6 +3,7 @@ import AboutSection from "./components/AboutSection";
 import HeadOfState from "./components/HeadOfState";
 import StaticsSection from "./components/StaticsSection";
 import SuccessfulSchemes from "./components/SuccessfulSchemes";
+import SchemesTabs from "./components/SchemesTabs";
 
 export default function Home() {
   return (
@@ -10,12 +11,9 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <HeadOfState />
-
-      {/* Successful Schemes Section */}
-      
-
       <StaticsSection />
       <SuccessfulSchemes />
+      <SchemesTabs />
     </>
   );
 }
