@@ -31,9 +31,22 @@ export default function NewsEventsSection() {
   }, []);
 
   return (
-    <section className="bg-[#eef7fb] py-20">
-      {/* ✅ MOBILE FULL WIDTH — DESKTOP EXTRA LEFT SPACE */}
-      <div className="max-w-7xl mx-auto px-4 lg:pl-24 lg:pr-6">
+    <section className="relative bg-[#eef7fb] py-20 overflow-hidden">
+
+      {/* ✅ LEFT DECORATIVE HALF IMAGE */}
+      <div
+        className="absolute top-1/2 -translate-y-1/2 opacity-100 pointer-events-none z-0"
+        style={{ left: "-320px" }}
+      >
+        <img
+          src="/hero/back.svg"
+          alt=""
+          className="w-[650px]"
+        />
+      </div>
+
+      {/* MAIN CONTENT */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 lg:pl-24 lg:pr-6">
 
         {/* HEADING */}
         <div className="text-center mb-14">
@@ -54,7 +67,6 @@ export default function NewsEventsSection() {
               Spotlight
             </div>
 
-            {/* IMAGE */}
             <div className="bg-white p-3">
               <div className="relative h-[230px] overflow-hidden rounded-sm">
                 <div
@@ -78,7 +90,6 @@ export default function NewsEventsSection() {
               </div>
             </div>
 
-            {/* CONTENT */}
             <div className="bg-white shadow-xl flex flex-col flex-1">
               <ul className="p-6 text-sm space-y-2 list-disc list-inside">
                 {[
@@ -95,7 +106,7 @@ export default function NewsEventsSection() {
                 ].map((item, i) => (
                   <li
                     key={i}
-                    className="text-gray-700 cursor-pointer transition hover:text-orange-500 hover:animate-pulse"
+                    className="text-gray-700 cursor-pointer transition hover:text-orange-500"
                   >
                     {item}
                   </li>
@@ -144,13 +155,12 @@ export default function NewsEventsSection() {
                   "India Handloom Brand Scheme",
                   "National Handloom Weavers' Welfare Fund",
                   "Handloom Export Promotion Council (HEPC)",
-                  "Guidelines for uploading accessible documents",
                   "Skill India Mission",
                   "National Food Security Act (NFSA)",
                 ].map((item, i) => (
                   <li
                     key={i}
-                    className="text-gray-700 cursor-pointer transition hover:text-orange-500 hover:animate-pulse"
+                    className="text-gray-700 cursor-pointer transition hover:text-orange-500"
                   >
                     {item}
                   </li>
@@ -179,7 +189,6 @@ export default function NewsEventsSection() {
                 <li>Weaver Support Center</li>
                 <li>Handloom Development Center</li>
                 <li>Other Links</li>
-             
               </ul>
             </div>
 

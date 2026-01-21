@@ -2,26 +2,32 @@ export default function AboutSection() {
   return (
     <section className="relative bg-[#F3FAFF] py-20 px-6 overflow-hidden">
 
-      {/* Decorative left pattern */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-20">
+      {/* LEFT HALF IMAGE */}
+      <div
+        className="absolute top-1/2 -translate-y-1/2 opacity-100 pointer-events-none"
+        style={{ left: "-350px" }}
+      >
         <img
-          src="/patterns/mandala-left.png"
+          src="/hero/back.svg"
           alt=""
-          className="w-72 md:w-96"
+          className="w-[600px]"
         />
       </div>
 
-      {/* Decorative right pattern */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-20">
+      {/* RIGHT HALF IMAGE */}
+      <div
+        className="absolute top-1/2 -translate-y-1/2 opacity-100 pointer-events-none"
+        style={{ right: "-350px" }}
+      >
         <img
-          src="/patterns/mandala-right.png"
+          src="/hero/back.svg"
           alt=""
-          className="w-72 md:w-96"
+          className="w-[600px]"
         />
       </div>
 
-      {/* Content */}
-      <div className="relative max-w-5xl mx-auto">
+      {/* CONTENT */}
+      <div className="relative z-10 max-w-5xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold text-[#1E3A8A] mb-4 text-center">
           About Us
         </h2>
@@ -31,15 +37,7 @@ export default function AboutSection() {
         </h3>
 
         <p className="text-gray-600 text-lg leading-9 text-left">
-          Weaving together a vibrant community of artisans, the Weaver’s
-          Service Center Bhubaneswar is dedicated to preserving and
-          promoting the rich heritage of handloom weaving. Our mission
-          is to empower weavers, foster sustainable practices, and
-          bridge the gap between traditional craftsmanship and modern
-          markets. We provide a platform for weavers to showcase their
-          unique creations, access training and resources, and thrive
-          in a competitive world. Join us in celebrating the beauty and
-          resilience of handloom weaving.
+       Weaving together a vibrant community of artisans, the Weaver's Service Center Bhubaneswar is dedicated to preserving and promoting the rich heritage of handloom weaving. Our mission is to empower weavers, foster sustainable practices, and bridge the gap between traditional craftsmanship and modern markets. We provide a platform for weavers to showcase their unique creations, access training and resources, and thrive in a competitive world. Join us in celebrating the beauty and resilience of handloom weaving.
         </p>
       </div>
 
