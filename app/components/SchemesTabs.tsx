@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -15,11 +16,12 @@ import { Bar } from "react-chartjs-2";
 ====================== */
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
-/* ======================
-   MAIN COMPONENT
-====================== */
 export default function SchemesTabs() {
-  const [activeTab, setActiveTab] = useState<"latest" | "cluster">("latest");
+  const [activeTab, setActiveTab] =
+    useState<"latest" | "cluster">("latest");
+
+  // 🔒 prevent animation on first load
+  const [hasClicked, setHasClicked] = useState(false);
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-12">
@@ -27,13 +29,17 @@ export default function SchemesTabs() {
         Schemes
       </h2>
 
-      {/* FIRST TABLE (WITH TABS) */}
+      {/* ================= MAIN TABLE ================= */}
       <div className="bg-white rounded-xl shadow-md overflow-hidden">
-        {/* TAB ROW */}
+
+        {/* TABS */}
         <div className="grid grid-cols-2">
           <button
-            onClick={() => setActiveTab("latest")}
-            className={`py-4 font-semibold text-lg ${
+            onClick={() => {
+              setHasClicked(true);
+              setActiveTab("latest");
+            }}
+            className={`py-4 font-semibold text-lg transition ${
               activeTab === "latest"
                 ? "bg-[#1C2B78] text-white"
                 : "bg-gray-300 text-gray-700"
@@ -43,8 +49,11 @@ export default function SchemesTabs() {
           </button>
 
           <button
-            onClick={() => setActiveTab("cluster")}
-            className={`py-4 font-semibold text-lg ${
+            onClick={() => {
+              setHasClicked(true);
+              setActiveTab("cluster");
+            }}
+            className={`py-4 font-semibold text-lg transition ${
               activeTab === "cluster"
                 ? "bg-[#1C2B78] text-white"
                 : "bg-gray-300 text-gray-700"
@@ -54,21 +63,71 @@ export default function SchemesTabs() {
           </button>
         </div>
 
-        {activeTab === "latest" && <LatestSchemes />}
-        {activeTab === "cluster" && <ClusterwiseSummary />}
+        {/* ================= ANIMATION ================= */}
+        <div className="relative overflow-hidden">
+          <AnimatePresence mode="wait">
+
+            {activeTab === "latest" && (
+              <motion.div
+                key="latest"
+                initial={
+                  hasClicked
+                    ? { x: 140, opacity: 0 }
+                    : undefined
+                }
+                animate={{ x: 0, opacity: 1 }}
+                exit={
+                  hasClicked
+                    ? { x: -140, opacity: 0 }
+                    : undefined
+                }
+                transition={{
+                  duration: 0.45,
+                  ease: "easeInOut",
+                }}
+              >
+                <LatestSchemes />
+              </motion.div>
+            )}
+
+            {activeTab === "cluster" && (
+              <motion.div
+                key="cluster"
+                initial={
+                  hasClicked
+                    ? { x: 140, opacity: 0 }
+                    : undefined
+                }
+                animate={{ x: 0, opacity: 1 }}
+                exit={
+                  hasClicked
+                    ? { x: -140, opacity: 0 }
+                    : undefined
+                }
+                transition={{
+                  duration: 0.45,
+                  ease: "easeInOut",
+                }}
+              >
+                <ClusterwiseSummary />
+              </motion.div>
+            )}
+
+          </AnimatePresence>
+        </div>
       </div>
 
-      {/* GAP BETWEEN TWO TABLES */}
+      {/* SPACE */}
       <div className="h-14" />
 
-      {/* SECOND TABLE (CHART TABLE) */}
+      {/* ================= CHART TABLE ================= */}
       <ChartTable />
     </section>
   );
 }
 
 /* ======================
-   LATEST SCHEMES TABLE
+   LATEST SCHEMES
 ====================== */
 function LatestSchemes() {
   const data = [
@@ -119,7 +178,7 @@ function LatestSchemes() {
 }
 
 /* ======================
-   CLUSTERWISE TABLE
+   CLUSTERWISE
 ====================== */
 function ClusterwiseSummary() {
   return (
@@ -149,7 +208,7 @@ function ClusterwiseSummary() {
 }
 
 /* ======================
-   CHART AS SECOND TABLE
+   CHART TABLE
 ====================== */
 function ChartTable() {
   return (
@@ -179,7 +238,7 @@ function ChartTable() {
 ====================== */
 function SchemesBarChart() {
   const data = {
-    labels: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan"],
+    labels: ["Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan"],
     datasets: [
       {
         data: [12, 19, 3, 5, 2, 3, 10, 8, 15, 7, 11, 9],

@@ -7,7 +7,9 @@ import SuccessfulSchemes from "./components/SuccessfulSchemes";
 import WeaversEvent from "./components/WeaversEvent";
 import NewsEventsSection from "./components/NewsEventsSection";
 import ContactSection from "./components/ContactSection";
-import Footer from "./components/Footer"
+import InitiativesSlider from "./components/InitiativesSlider"
+import Footer from "./components/Footer";
+
 
 export default function HomePage() {
   return (
@@ -20,7 +22,9 @@ export default function HomePage() {
       <SuccessfulSchemes />
       <WeaversEvent />
       <NewsEventsSection />
+    
       <ContactSection />
+        <InitiativesSlider />
       <Footer />
     </main>
   );
