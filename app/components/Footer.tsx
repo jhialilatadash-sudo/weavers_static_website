@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaPhoneAlt, FaArrowUp } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -37,27 +36,52 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* DESCRIPTION */}
             <p className="text-sm leading-relaxed text-gray-200 max-w-md">
               Discover the beauty of handwoven textiles. Our weavers create
               unique and exquisite pieces using traditional techniques.
               From intricate patterns to vibrant colors, each piece tells a story.
             </p>
 
+            {/* READ MORE */}
             <Link
               href="#"
-              className="text-blue-300 hover:text-white text-sm font-medium"
+              className="inline-block text-blue-300 hover:text-white
+                         text-sm font-medium"
             >
               Read More →
             </Link>
 
-            <div className="inline-flex items-center gap-3 bg-[#0a8cf5]
-                            px-5 py-2.5 rounded-full w-fit mt-2">
-              <FaPhoneAlt />
-              <div>
-                <p className="text-xs">Weavers Helpline</p>
-                <p className="font-bold">1800111959</p>
+            {/* ================= HELPLINE BUTTON ================= */}
+            <div className="mt-4">
+
+              <div className="relative inline-flex items-center">
+
+                {/* WHITE CIRCLE ICON */}
+                <div
+                  className="absolute -left-5 flex items-center justify-center
+                             w-11 h-11 rounded-full bg-white shadow-md"
+                >
+                  <i className="bi bi-telephone-outbound-fill text-[#0a8cf5] text-lg"></i>
+                </div>
+
+                {/* BLUE BUTTON */}
+                <div
+                  className="flex items-center
+                             bg-[#007bff] text-white
+                             pl-10 pr-6 py-2
+                             rounded-full font-medium"
+                >
+                  <div className="leading-tight">
+                    <p className="text-xs">Weavers Helpline</p>
+                    <p className="text-md font-bold">1800111959</p>
+                  </div>
+                </div>
+
               </div>
+
             </div>
+
           </div>
 
           {/* ================= RIGHT LINKS ================= */}
@@ -128,15 +152,6 @@ export default function Footer() {
           Scrumin Technology Pvt. Ltd.
         </span>
       </div>
-
-      {/* ================= BACK TO TOP ================= */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-6 right-6 bg-orange-500 text-white
-                   p-3 rounded-md shadow-lg hover:bg-orange-600"
-      >
-        <FaArrowUp />
-      </button>
 
     </footer>
   );

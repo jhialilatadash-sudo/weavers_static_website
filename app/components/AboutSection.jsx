@@ -1,10 +1,12 @@
 export default function AboutSection() {
   return (
-    <section className="relative bg-[#F3FAFF] py-20 px-6 overflow-hidden">
-
-      {/* LEFT HALF IMAGE */}
+    <section
+      id="about"
+      className="scroll-mt-32 relative bg-[#EDF7FE] py-20 px-6 overflow-hidden"
+    >
+      {/* LEFT IMAGE */}
       <div
-        className="absolute top-1/2 -translate-y-1/2 opacity-100 pointer-events-none"
+        className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
         style={{ left: "-350px" }}
       >
         <img
@@ -14,9 +16,9 @@ export default function AboutSection() {
         />
       </div>
 
-      {/* RIGHT HALF IMAGE */}
+      {/* RIGHT IMAGE */}
       <div
-        className="absolute top-1/2 -translate-y-1/2 opacity-100 pointer-events-none"
+        className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
         style={{ right: "-350px" }}
       >
         <img
@@ -37,10 +39,16 @@ export default function AboutSection() {
         </h3>
 
         <p className="text-gray-600 text-lg leading-9 text-left">
-       Weaving together a vibrant community of artisans, the Weaver's Service Center Bhubaneswar is dedicated to preserving and promoting the rich heritage of handloom weaving. Our mission is to empower weavers, foster sustainable practices, and bridge the gap between traditional craftsmanship and modern markets. We provide a platform for weavers to showcase their unique creations, access training and resources, and thrive in a competitive world. Join us in celebrating the beauty and resilience of handloom weaving.
+          Weaving together a vibrant community of artisans, the Weaver&apos;s
+          Service Center Bhubaneswar is dedicated to preserving and promoting the
+          rich heritage of handloom weaving. Our mission is to empower weavers,
+          foster sustainable practices, and bridge the gap between traditional
+          craftsmanship and modern markets. We provide a platform for weavers to
+          showcase their unique creations, access training and resources, and
+          thrive in a competitive world. Join us in celebrating the beauty and
+          resilience of handloom weaving.
         </p>
       </div>
-
     </section>
   );
 }
