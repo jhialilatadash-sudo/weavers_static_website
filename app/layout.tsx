@@ -25,7 +25,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-
       <head>
         <link
           rel="stylesheet"
@@ -33,11 +32,11 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      {/* ❗ DO NOT ADD overflow-hidden HERE */}
+      <body className="antialiased">
         <Navbar />
         {children}
       </body>
-
     </html>
   );
 }
